@@ -11,13 +11,13 @@ pandarallel.initialize()
 # import timeit
 
 # Load data locally
-df_orig = pd.read_excel(r'result_data_x.xlsx', names=['index', 'type', 'date', 'code', \
-    'filter_one', 'filter_two', 'filter_three', 'filter_four', 'recommendation', 'easiness', 'overall', 'question_one', \
-    'rec_sc', 'eas_sc', 'sentiment', 'lang', 'question_one_filtered_lemmas'])
-# Load data on server
-# df_orig = pd.read_excel(r'bokeh-dash-x/result_data_x.xlsx', names=['index', 'type', 'date', 'code', \
+# df_orig = pd.read_excel(r'result_data_x.xlsx', names=['index', 'type', 'date', 'code', \
 #     'filter_one', 'filter_two', 'filter_three', 'filter_four', 'recommendation', 'easiness', 'overall', 'question_one', \
 #     'rec_sc', 'eas_sc', 'sentiment', 'lang', 'question_one_filtered_lemmas'])
+# Load data on server
+df_orig = pd.read_excel(r'bokeh-dash-x/result_data_x.xlsx', names=['index', 'type', 'date', 'code', \
+    'filter_one', 'filter_two', 'filter_three', 'filter_four', 'recommendation', 'easiness', 'overall', 'question_one', \
+    'rec_sc', 'eas_sc', 'sentiment', 'lang', 'question_one_filtered_lemmas'])
 
 # Transform filtered lemmas string into list of strings
 df_orig['question_one_filtered_lemmas'] = df_orig.loc[~df_orig['question_one_filtered_lemmas'].isna()]['question_one_filtered_lemmas'].parallel_apply(lambda x: x[2:-2].split("', '"))
