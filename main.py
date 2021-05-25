@@ -285,22 +285,22 @@ row_four = row(general_dict['points_plots'], sizing_mode='scale_width', css_clas
 ###################################################################################
 ############################ Visual 2 - Category Filters ##########################
 
-def callback_filter_3(attr, old, new):
-    update_filters()
-    filter_dfs()
+# def callback_filter_3(attr, old, new):
+#     update_filters()
+#     filter_dfs()
 
-    for type_filter in general_dict['type_list']:
-        update_plot_points(type_filter)
-        update_emotions_points(type_filter)
-        update_frequency_points(type_filter)
-        update_wordcloud_points(type_filter)
-    # print("callback_filter_3", timeit.timeit('output = 10*5'))
+#     for type_filter in general_dict['type_list']:
+#         update_plot_points(type_filter)
+#         update_emotions_points(type_filter)
+#         update_frequency_points(type_filter)
+#         update_wordcloud_points(type_filter)
+#     # print("callback_filter_3", timeit.timeit('output = 10*5'))
 
-general_dict['filter_3'] = CheckboxButtonGroup(active=list(range(len(general_dict['full_factory_filter_list']))) , labels=general_dict['full_factory_filter_list'], sizing_mode='scale_width')#, name=row_one)
+# general_dict['filter_3'] = CheckboxButtonGroup(active=list(range(len(general_dict['full_factory_filter_list']))) , labels=general_dict['full_factory_filter_list'], sizing_mode='scale_width')#, name=row_one)
 
-general_dict['filter_3'].on_change('active', callback_filter_3)
+# general_dict['filter_3'].on_change('active', callback_filter_3)
 
-row_one = general_dict['filter_3']
+# row_one = general_dict['filter_3']
 #############################
 def callback_filter_1(attr, old, new):
     update_filters()
@@ -721,4 +721,4 @@ row_seven = row(general_dict['wordcloud_plots'], sizing_mode='scale_width', css_
 # curdoc().add_root(column(column(row_one,buttons_row, row_three,row_four,row_five,Spacer(height=50),row_six,row_seven, sizing_mode='scale_width', css_classes=['upper-flex']), sizing_mode='scale_width', margin=(0,30,0,0)))
 # curdoc().add_root(column(column(buttons_row,row_four,row_five,Spacer(height=50), row_six,row_seven, sizing_mode='scale_width', css_classes=['upper-flex']), sizing_mode='scale_width', margin=(0,30,0,0)))
 
-curdoc().add_root(column(row_one,buttons_row, row(column(row_four, row_five, sizing_mode='scale_width'),Spacer(width=50), column(row_six,row_seven, sizing_mode='scale_width')), sizing_mode='scale_width', css_classes=['upper-flex'], margin=(0,30,0,0)))
+curdoc().add_root(column(buttons_row, row(column(row_four, row_five, sizing_mode='scale_width'),Spacer(width=50), column(row_six,row_seven, sizing_mode='scale_width')), sizing_mode='scale_width', css_classes=['upper-flex'], margin=(0,30,0,0)))
